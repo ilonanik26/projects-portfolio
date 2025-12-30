@@ -1,0 +1,77 @@
+/* Bänneri ja navigaatio */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background: url('A_pixel-art_style_game_banner_for_Nostalgy_School.png') no-repeat center center/cover;
+}
+
+/* Navigointivalikko */
+.menu {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+/* Hamburger-valikon tyyli */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    .banner {
+        height: 30vh;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+}

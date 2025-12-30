@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>About - Nostlgy School Run</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+        <style>
+        body {
+            background-image: linear-gradient(rgba(52, 251, 122, 0.5), rgba(70, 232, 208, 0.5));  /* Liukuväritausta vihreästä sinertävään, läpinäkyvyydellä */
+            background-repeat: no-repeat; /* Varmistaa, että tausta ei toistu */
+            min-height: 100vh; /* Sivun minimikorkeus on koko näytön korkeus */
+            text-align: center;  /* Teksti keskitetään vaakasuunnassa oletuksena */
+            font-family: 'Press Start 2P'; /* Valitaan pikseligrafiikkamainen fontti, retro-tunnelmaa */
+            font-size: 20px;  /* Yliajaa aiemman 'large' määrityksen – määrittää tekstin koon */
+            margin:0; /* Poistaa oletusmarginaalit selaimen reunasta */
+            
+        }
+        ul {
+            background-color: rgb(22, 145, 22); /* Vihreä tausta yläpalkin listalle */
+            list-style-type: none; /* Poistaa perinteiset listamerkit */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Estetään sisällön pursuaminen yläpalkista ulos */
+        }
+        li {
+            float: left;
+            /* Navigaatiolinkit vierekkäin vaakarivissä */
+        }
+        a {
+            display: block;
+            padding: 14px 16px;
+             /* Klikattava alue kasvaa – mukavampi käyttää */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+             /* Valkoinen teksti, keskitys ja ei alleviivausta */
+        }
+
+        .navbar {
+                display: flex; 
+                align-items: center;
+                justify-content: space-between;
+                 /* Asettaa sisällöt kuten logon ja kielivalinnan tilavasti */
+                padding: 10px 20px;
+                background-color: rgb(22, 145,22);
+                /* Sama vihreä taustaväri kuin yläpalkissa */
+            }
+
+        .logo img {
+                width:100px;
+                border-radius: 50px;
+                /* Pyöristetään kuva lähes ympyräksi */
+                float: left;
+                margin-right: 10px;
+                /* Välilyönti logon ja muiden elementtien väliin */
+        }
+
+        li a:hover {
+            background-color: #111;
+             /* Kun hiiri viedään linkin päälle, väri muuttuu tummaksi */
+        }
+        .active {
+            background-color: darkgreen;
+             /* Korostaa aktiivisen (valitun) sivun linkin eri värillä */
+        }
+
+       /* Footer Styles */
+       footer {
+                background-color: rgb(22, 145, 22);
+                 /* Sama vihreä tausta kuin yläpalkissa */
+                padding: 20px;
+                /* Tilaa sisällön ympärillä */
+                text-align: center;
+                /* Keskittää footerin sisällön */
+
+                margin-top: 50px;
+                /* Väli ennen footeria (esim. muuhun sisältöön nähden) */
+            }
+
+            .footer-logos-container {
+                display: flex;
+                justify-content: center; /* Center logos horizontally */
+                align-items: center;
+                gap: 30px; /* Adds space between logos */
+            }
+
+            /* Style for the logos */
+            .footer-logos-container img {
+                width: 80px; /* Logo size */
+            }
+
+            .language-selector img {
+                width:30px;
+                margin-left: 10px;
+                cursor: pointer;
+                /* Pienet liput, hieman väliä ja osoitin muuttuu klikattavaksi */
+            }
+            .active-language {
+                border: 2px solid darkgreen;
+                 /* Valitulla kielellä vihreä kehys näkyvyyden vuoksi */
+            }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="logo" id="logo-link">
+                <img src="images/logowobg.png" alt="logo">
+            </a>
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="news.html" id="news-link">News</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a class="active" href="about-team.html"
+                        id="about-link">About Us</a></li>
+                <li><a href="about-yhta.html"
+                        id="yhta-link">YHTÄ-project</a></li>
+            </ul>
+            <div class="language-selector">
+                <img src="images/finnish .png" alt="Finnish"
+                    onclick="setLanguage('fi')">
+                <img src="images/English.png" alt="English"
+                    onclick="setLanguage('en')" class="active-language">
+            </div>
+        </nav>
+
+        <h1 id="about-heading">About Nostalgy School Run</h1>
+        <p id="story-title">The Story of Lizzard Productions 🦎🎮</p>
+        <p id="intro-text">On December 11th, we were given a school assignment:
+            to come up with a game idea that would teach children traffic rules
+            in a fun and engaging way.</p>
+        <p id="brainstorming-text">We started brainstorming—thinking about what
+            kind of game would be exciting for kids, what they would actually do
+            in the game, and how learning could be part of the fun. After lots
+            of crazy (and some not-so-crazy) ideas, one concept stood out…</p>
+        <p id="game-idea-text">And that’s how Nostalgy School Run was born! A
+            retro-style runner game where kids race through busy streets,
+            dodging cars, jumping over potholes, and learning traffic safety
+            rules as they go—without even realizing they’re learning!</p>
+        <p id="project-meaning-text">Lizzard Production may have started as a
+            school project, but for us it turned into something more: a creative
+            journey, a chance to build something from scratch, and maybe even
+            the beginning of something awesome. 🚀🎮</p>
+        <p id="collaboration-text">Our project has been developed in
+            collaboration with the YHTÄ project. This partnership allows us to
+            leverage the data and insights provided by the YHTÄ initiative to
+            create innovative solutions and applications that benefit the city
+            and its residents.</p>
+
+        <!-- Footer with scrollable logos and buttons -->
+        <footer>
+            <div class="footer-logos-container">
+
+                <div class="footer-logos-repeat">
+                    <img src="images/TampereenAMK logo.png" alt="Logo 1">
+                    <img src="images/Tampereen logo.png" alt="Logo 2">
+                    <img src="images/Tietojenkäsittely logo.png" alt="Logo 3">
+                    <img src="images/Council logo.jpg" alt="Logo 4">
+                    <img src="images/EU logo.png" alt="Logo5">
+                    <img src="images/Finnpark logo.png" alt="Logo6">
+                    <img src="images/maptionnaire logo.jpg" alt="Logo7">
+                    <img src="images/insta logo .png" alt="Logo 8">
+                    <img src="images/Louhe logo.png" alt="Logo 9">
+                    <img src="images/Sitowise logo.png" alt="Logo 10">
+                    <img src="images/Moovy logo.png" alt="Logo 11">
+                </div>
+            </footer>
+
+            <script>
+                function setLanguage(lang) {
+                    const enText = {
+                        "about-heading": "About Nostalgy School Run",
+                        "story-title": "The Story of Lizzard Productions 🦎🎮",
+                        "intro-text": "On December 11th, we were given a school assignment: to come up with a game idea that would teach children traffic rules in a fun and engaging way.",
+                        "brainstorming-text": "We started brainstorming—thinking about what kind of game would be exciting for kids, what they would actually do in the game, and how learning could be part of the fun. After lots of crazy (and some not-so-crazy) ideas, one concept stood out…",
+                        "game-idea-text": "And that’s how Nostlgy School Run was born! A retro-style runner game where kids race through busy streets, dodging cars, jumping over potholes, and learning traffic safety rules as they go—without even realizing they’re learning!",
+                        "project-meaning-text": "Lizzard Production may have started as a school project, but for us it turned into something more: a creative journey, a chance to build something from scratch, and maybe even the beginning of something awesome. 🚀🎮",
+                        "collaboration-text": "Our project has been developed in collaboration with the YHTÄ project. This partnership allows us to leverage the data and insights provided by the YHTÄ initiative to create innovative solutions and applications that benefit the city and its residents.",
+                        "home-link": "Home",
+                        "news-link": "News",
+                        "contact-link": "Contact",
+                         "about-link": "About Us",
+                         "yhta-link": "YHTÄ-project"
+                    
+                    };
+        
+                    const fiText = {
+                        "about-heading": "Tietoa Nostalgy School Runista",
+                        "story-title": "Lizzard Productionsin Tarina 🦎🎮",
+                        "intro-text": "11. joulukuuta saimme koulutehtävän: keksiä peli-idea, joka opettaisi lapsille liikennesääntöjä hauskalla ja kiinnostavalla tavalla.",
+                        "brainstorming-text": "Aloimme ideoimaan—mietimme, millainen peli olisi jännittävä lapsille, mitä he tekisivät pelissä ja kuinka oppiminen voisi olla osa hauskuutta. Monien hullujen (ja joidenkin ei-niin-hullujen) ideoiden jälkeen yksi ajatus erottui…",
+                        "game-idea-text": "Ja näin syntyi Nostalgy School Run! Retropelimäinen juoksupeli, jossa lapset kilpailevat vilkkailla kaduilla, väistävät autoja, hyppäävät kuoppien yli ja oppivat liikenneturvallisuussääntöjä – huomaamatta, että he oppivat!",
+                        "project-meaning-text": "Lizzard Productions sai alkunsa kouluprojektina, mutta meille siitä tuli jotain enemmän: luova matka, mahdollisuus rakentaa jotain alusta alkaen, ja ehkä, jopa aloittaa jotain upeaa. 🚀🎮",
+                        "collaboration-text": "Projektimme on kehitetty yhteistyössä YHTÄ-hankkeen kanssa. Tämä kumppanuus antaa meille mahdollisuuden hyödyntää YHTÄ-aloitteen projektin tarjoamaa dataa ja näkemyksiä luodaksemme innovatiivisia ratkaisuja ja sovelluksia, jotka hyödyttävät kaupunkia ja sen asukkaita.",
+                        "home-link": "Etusivu",
+                "news-link": "Uutiset",
+                "contact-link": "Yhteystiedot",
+                "about-link": "Meistä",
+                "yhta-link": "YHTÄ-Hanke"
+                    };
+        
+                    const text = lang === 'fi' ? fiText : enText;
+        
+                    // Update all text content based on the selected language
+                    for (const key in text) {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.textContent = text[key];
+                        }
+                    }
+        
+                    // Toggle language selector active state
+                    const languages = document.querySelectorAll('.language-selector img');
+                    languages.forEach(langImg => langImg.classList.remove('active-language'));
+                    document.querySelector(`.language-selector img[alt="${lang}"]`).classList.add('active-language');
+                }
+            </script>
+        </body>
+    </html>

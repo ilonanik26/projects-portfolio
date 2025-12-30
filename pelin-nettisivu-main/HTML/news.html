@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+        <title>News - Nostlgy School Run</title>
+        <style>
+            /* BODY: koko sivun yleiset tyylit */
+        body {
+            background-image: linear-gradient(rgba(52, 251, 122, 0.5), rgba(70, 232, 208, 0.5));  /* Taustaksi asetetaan liukuvärjäys kahdesta väristä läpinäkyvällä efektillä */
+
+            background-repeat: no-repeat; /* Estää taustakuvan tai -gradientin toistumisen */
+
+            min-height: 100vh; /* Vähimmäiskorkeus on 100% näytön korkeudesta (full viewport height) */
+            text-align: center; /* Kaikki tekstit oletuksena keskitetään*/
+            font-family: 'Press Start 2P';  /* Käytetään retrotyylistä fonttia – muistuttaa 8-bit pelien tekstiä */
+            font-size: 20px; /* Tämä on lopullinen fonttikoko*/
+            margin:0; /* Poistaa oletusmarginaalit sivulta */
+        }
+        /* NAVIGAATIO (yläpalkki) */
+        ul {
+            background-color: rgb(22, 145, 22);  /* Tummanvihreä taustaväri valikolle */
+
+            list-style-type: none; /* Poistaa listapallot */
+            margin: 0;
+            padding: 0;
+            /* Nollaa marginaalit ja sisennykset listalta */
+            overflow: hidden;
+             /* Estää sisällön valumisen ulos, jos esim. elementit kelluvat */
+        }
+        li {
+            float: left;
+            /* Jokainen listaelementti kelluu vierekkäin vaakasuunnassa */
+        }
+        a {
+            display: block;
+            padding: 14px 16px;
+            /* Sisäinen tila linkkien ympärillä */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            /* Poistaa alleviivauksen ja keskittää tekstin */
+        }
+
+        .navbar {
+                display: flex; 
+                align-items: center;
+                justify-content: space-between;
+                /* Flexboxilla logo vasemmalle, linkit oikealle */
+                padding: 10px 20px;
+                background-color: rgb(22, 145,22);
+        }
+
+        .logo img {
+                width:100px;
+                border-radius: 50px;
+                /* Tekee logosta pyöreähkön */
+                float: left;
+                margin-right: 10px;
+                /* Pieni tila logon ja tekstin väliin */
+        }
+
+
+
+        li a:hover {
+            background-color: #111;
+             /* Kun hiiri viedään linkin päälle, taustaväri muuttuu tummemmaksi */
+        }
+        .active {
+            background-color: darkgreen;
+            /* Aktiivinen linkki (valittu sivu) korostetaan eri värillä */
+        }
+         /* POSTERI-KUVA*/
+        .poster img {
+            size: 200px;
+            height: auto;  /* Korkeus skaalaantuu leveyden mukaan automaattisesti */
+
+
+            display: block;
+            margin: 20px auto;  /* Keskittää kuvan vaakasuunnassa ja lisää ylä- ja alareunaan marginaalit */
+            max-width: 400px;  /* Kuva ei veny yli 400px */
+            border-radius: 10px;  /* Pehmeät pyöristetyt kulmat */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hento varjo kuvan taakse */
+            
+        }
+        .poster{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+             /* Keskittää posterin sisällön molempiin suuntiin */
+        }
+        /* Uutisten tyyli */
+    h1 {
+        font-size: 2rem;
+        color:#333;
+        margin-bottom: 10px;
+        /* Tumma otsikkoväri ja pieni marginaali alapuolelle */
+    }
+
+    /*Uutisten kuvaus*/
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        /* Mukava riviväli helpottaa lukemista */
+        color: #555;
+         /* Vaaleanharmaa teksti */
+
+        margin-bottom: 20px;
+        /* Tila tekstin ja seuraavan elementin välille */
+    }
+
+    /*Erityinen tyyli päivämäärälle*/
+   .news-date {
+    font-size: 1 rem;
+    color: pink;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    /* Näytetään omalla rivillään */
+   }       
+/* Asetetaan nämä kolme sisältöelementtiä keskelle leveydeltään*/
+.news-date,
+.poster,
+.news-text {
+    text-align: left; /* Tekstit vasempaan reunaan (parempi luettavuus) */
+    margin-left: 10%;
+    margin-right: 10%;
+    /* Jättää vasemmalle ja oikealle tilaa eli "white space" */
+}
+/* Kielivalinnan lippukuvat */
+.language-selector img {
+                width:30px;
+                margin-left: 10px;
+                cursor: pointer;
+                /* Klikattava osoitin ja pientä väliä kuvien väliin */
+            }
+            .active-language {
+                border: 2px solid darkgreen;
+                /* Valittu kieli saa korostuksen kehyksellä */
+            }
+
+
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="images/logowobg.png" alt="logo">
+            </a>
+
+            <ul>
+                <li><a id="home-link" href="index.html">Home</a></li>
+                <li><a id="news-link" class="active"
+                        href="news.html">News</a></li>
+                <li><a id="contact-link" href="contact.html">Contact</a></li>
+                <li><a id="about-link" href="about-team.html">About Us</a></li>
+                <li><a id="yhta-link"
+                        href="about-yhta.html">YHTÄ-project</a></li>
+            </ul>
+
+            <div class="language-selector">
+                <img src="images/finnish .png" alt="Finnish"
+                    onclick="setLanguage('fi')">
+                <img src="images/English.png" alt="English"
+                    onclick="setLanguage('en')" class="active-language">
+            </div>
+        </nav>
+
+        <h1 id="news-heading">Latest News</h1>
+        <p id="news-description">Here you will find all the latest updates about
+            Nostlgy School Run.</p>
+
+        <time class="news-date" id="news-date">9.04.2025 17:56</time>
+        <p id="news-content">Hey! We have great news! Our game is out soon! Come
+            and check this out!</p>
+
+        <div class="poster">
+            <img src="images/Peli messut (1).png" alt="poster">
+        </div>
+
+        <time class="news-date" id="news-date">19.04.2025 16:47</time>
+        <p id="news-trailer"> Hey there! We have our trailer out now! You can
+            watch it on YouTube by clicking on the video below!</p>
+        <iframe id="video-en" width="560" height="315"
+            src="https://www.youtube.com/embed/I0BdrNaxjoc?si=G_tDf2FZz56nBtMb"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+        <iframe id="video-fi" width="560" height="315"
+            src="https://www.youtube.com/embed/NHKbMER6wIw?si=ZZQz166Rxhfo4bhv"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+        <script>
+        function setLanguage(language) {
+    const languageData = {
+        en: {
+            home: "Home",
+            news: "News",
+            contact: "Contact",
+            about: "About Us",
+            yhta: "YHTÄ-project",
+            newsHeading: "Latest News",
+            newsDescription: "Here you will find all the latest updates about Nostlgy School Run.",
+            newsDate: "9.04.2025 17:56",
+            newsContent: "Hey! We have great news! Our game is out soon! Come and check this out!",
+            newsTrailer: "Hey there! We have our trailer out now! You can watch it on YouTube by clicking on the video below!"
+        },
+        fi: {
+            home: "Koti",
+            news: "Uutiset",
+            contact: "Yhteystiedot",
+            about: "Meistä",
+            yhta: "YHTÄ-Hanke",
+            newsHeading: "Uusimmat Uutiset",
+            newsDescription: "Täältä löydät kaikki viimeisimmät päivitykset Nostalgy School Runista.",
+            newsDate: "9.04.2025 17:56",
+            newsContent: "Hei! Meillä on hyviä uutisia! Peli tulee pian ulos! Tule katsomaan!",
+            newsTrailer: "Hei! Trailerimme on nyt julkaistu! Voit katsoa sen YouTubessa klikkaamalla alla olevaa videota!"
+        }
+    };
+
+    // Update text for navbar links
+    document.getElementById("home-link").innerText = languageData[language].home;
+    document.getElementById("news-link").innerText = languageData[language].news;
+    document.getElementById("contact-link").innerText = languageData[language].contact;
+    document.getElementById("about-link").innerText = languageData[language].about;
+    document.getElementById("yhta-link").innerText = languageData[language].yhta;
+
+    // Update the content of the page
+    document.getElementById("news-heading").innerText = languageData[language].newsHeading;
+    document.getElementById("news-description").innerText = languageData[language].newsDescription;
+    document.getElementById("news-date").innerText = languageData[language].newsDate;
+    document.getElementById("news-content").innerText = languageData[language].newsContent;
+    // Vaihda näkyvä video kielen mukaan
+    document.getElementById("news-trailer").textContent = languageData[language].newsTrailer;
+    document.getElementById("video-en").style.display = language === "en" ? "block" : "none";
+    document.getElementById("video-fi").style.display = language === "fi" ? "block" : "none";
+}
+</script>
+    </body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nostlgy School Run </title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+        <style>
+            /* Sivun taustaan tulee liukuvärjäys vihreän ja sinisen sävyillä */
+            body {
+                background-image: linear-gradient(rgba(52, 251, 122, 0.5), rgba(70, 232, 208, 0.5));
+                background-repeat: no-repeat;
+                min-height: 100vh;  /* Koko näkymän korkuinen vähintään */  
+                font-family: 'Press Start 2P'; /* Retrofontti käytössä */
+                line-height: 1.8; /* Rivien välinen korkeus */
+                font-size: 20px;
+                margin: 0; /* Poistaa oletusmarginaalit */
+
+            }
+            /* Ylätunnisteen (bannerin) kuvalle pyöristetty alareuna */
+            .banner img {
+                width:100%; /* Kuva täyttää koko leveyden */
+                border-radius: 0 0 50px 50px; /* Pyöristää alakulmat */
+                float: left; /* Asettaa kuvan kellumaan vasemmalle */
+            }
+             /* Navigointilista: listaelementit kelluvat vierekkäin */
+            li {
+                float:left;
+            }
+            /* Linkkien ulkoasu navigaatiossa */
+            a {
+                display:block;
+                padding: 14px 16px;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+            }
+            /* Navigaatiopalkki */
+            ul {
+                background-color: rgb(22, 145,22);/* Tummanvihreä */
+                list-style-type: none; /* Poistaa listamerkit */
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                
+            }
+            /* Navigaation säilö */
+            .navbar {
+                display: flex; 
+                align-items: center;
+                justify-content: space-between; /* Jakaa logon ja linkit tasaisesti */
+                padding: 10px 20px;
+                background-color: rgb(22, 145,22);
+            }
+
+                /* Logo navigaatiossa */
+            .logo{
+                width:100px;
+                border-radius: 50px;
+                float: left;
+                margin-right: 10px;
+            }
+            /* Hover-efekti linkille */
+            li a:hover{
+                background-color: #111; /* Tummempi tausta kun hiiri on päällä */
+            }
+
+            /* Aktiivisen sivun linkin väri */
+            .active {
+                background-color: darkgreen;
+            }
+            /* Bannerin tyyli*/
+            .banner{
+                width: 100%;
+                height: 500px;
+                display: flex;
+                background-image: url("images/banner.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                top: 50%;
+
+               
+            }
+            /* Perustekstien tyyli */
+            p {
+                font-weight: bold;
+                text-align: center;
+                font-size: large;
+                margin-top: 40px;
+                justify-content:center ;
+            }
+            /* Pääkonteineri sisällölle */
+            .content{
+                width: 100%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                
+
+
+            }
+            /* Alisisältö: keskitä, säädä fonttikokoja, marginaalit */
+            .content-child {
+                width: 70%;
+                text-align: center;
+                font-size: medium;
+                margin-top: 100px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: large;
+                
+            }
+             /* Isompi teksti - yleensä otsikkomainen */
+            .first-part {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                font-weight: bold;
+                margin-right: 20px ;
+                text-align: right;
+                font-size: 40px;
+              
+            
+            }
+
+             /* Kevyempi selittävä teksti */
+            .second-part {
+                font-size: 1em;
+                font-weight: lighter;
+                font-size: 20px;
+                
+
+            }
+            /* Pelin ominaisuuksien lista */
+            .game-features {
+                text-align: left;
+               margin-left: 20px;
+               font-size: 20px;
+               background-color: transparent;
+               
+            }
+            /* Ominaisuuksien lista (ul) ilman taustaväriä */
+            ul.Features {
+                background-color: transparent;
+            }
+             /* Otsikoiden tyyli */
+            h2 {
+                font-size: 36px;
+                text-decoration: underline;
+            }
+
+             /* Yksittäinen ominaisuus otsikko */
+            .feature {
+                font-size: 24px;
+                font-weight: bold;
+                
+            }
+
+            /* Ominaisuuden kuvaus */
+            .feature-description {
+                font-size: 20px;
+                font-weight: lighter;
+                margin-top: 10px;
+                padding-bottom: 20px;
+             }
+             /* Hahmogalleria */
+            .character-gallery {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                margin-top: 50px;
+                flex-wrap: wrap; /* Joustaa pienillä näytöillä */
+            }
+             /* Hahmokuvat gallerian sisällä */
+            .character-gallery img {
+                width: 300px;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+                margin-bottom: 10px; 
+            }
+            .character-gallery h2 {
+                font-size: 36px;
+                font-weight:bold;
+                margin-bottom: 30px;
+                text-decoration: underline;
+            }
+            /* Yksittäinen hahmo */
+            .character {
+                display: inline-block;
+                margin: 0 20px;
+                text-align: center;
+            }
+            .character img {
+                width: 300px;
+                height: auto;
+                border-radius:10px;
+                box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+                margin-bottom: 10px;
+            }
+
+            .character-description {
+                font-size: 16px;
+                font-weight: normal;
+                color: #333;
+                margin-top: 10px;
+            }
+              html {
+                scroll-behavior: smooth;
+            }
+             /* Kielivalinnan lippujen ulkoasu */
+            .language-selector img {
+                width:30px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+            /* Aktiivinen kieli (esim. Suomi valittuna) */
+            .active-language {
+                border: 2px solid darkgreen;
+            }
+            /* Latausnappi */
+            .download-button {
+                display: inline-block;
+                background-color: darkgreen;
+                color: white;
+                font-size: 20px;
+                font-family:'Press Start 2P';
+                padding: 15px 30px;
+                margin: 50px auto;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+                transition: background-color 0.3s ease;
+            }
+
+    /* Hover-efekti napille */
+            .download-button:hover{
+                background-color: green;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <img src="images/logowobg.png" class="logo" alt="logo"
+                id="logo-link">
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="news.html" id="news-link">News</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="about-team.html" id="about-link">About Us</a></li>
+                <li><a href="about-yhta.html"
+                        id="yhta-link">YHTÄ-project</a></li>
+            </ul>
+            <div class="language-selector">
+                <img src="images/finnish .png" alt="Finnish"
+                    onclick="setLanguage('fi')" id="fi-lang">
+                <img src="images/English.png" alt="English"
+                    onclick="setLanguage('en')" id="en-lang"
+                    class="active-language">
+            </div>
+        </nav>
+
+        <div class="banner">
+            <img src="images/banner.png" alt="An image of our banner"
+                class="banner">
+        </div>
+
+        <p id="intro-text">Nostalgy School Run by Lizzard Production </p>
+
+        <div style="text-align: center;">
+            <a href="https://lizzard-productions.itch.io/nostalgy-school-run"
+                target="_blank" class="download-button" id="download-button">
+                Download Game
+            </a>
+        </div>
+
+        <section class="content">
+            <div class="content-child">
+                <p id="first-part" class="first-part">Hey there!</p>
+                <p id="second-part-1" class="second-part">
+                    Your parents want you to know the traffic rules — but you
+                    couldn’t care less about learning them and just want to play
+                    with your friends? Then we’ve got the perfect option for
+                    you! You and your parents are both going to love it!</p>
+
+                <p id="second-part-2" class="second-part">
+                    Nostalgy School Run is the game where
+                    kids can play freely while learning about traffic and safety
+                    equipment at the same time. This way, both parents and
+                    children are happy —
+                    and the roads become safer, too.</p>
+
+                <p id="second-part-3" class="second-part">
+                    On this website, you’ll get to explore our
+                    game, meet its characters, get to know the developers behind
+                    it, and even
+                    learn about our partner. Stay tuned and don’t forget to
+                    check out our latest updates in the News section!</p>
+
+                <div id="game-features-title" class="game-features">
+                    <h2>Game Features:</h2>
+                    <div id="endless-challenges" class="feature">
+                        Endless Challenges
+                        <div id="endless-challenges-description"
+                            class="feature-description">
+                            Dodge speeding cars, avoid reckless cyclists,
+                            and navigate unpredictable pedestrians as you
+                            race through an ever-changing environment based
+                            on real-life traffic scenarios from Tampere.
+                        </div>
+                    </div>
+                    <div id="learn-traffic-rules" class="feature">
+                        Learn Traffic Rules
+                        <div id="learn-traffic-rules-description"
+                            class="feature-description">
+                            Every obstacle is a lesson! From crossing at
+                            zebra crossings to obeying traffic lights,
+                            players will pick up essential traffic safety
+                            rules while having fun.
+                        </div>
+                    </div>
+
+                    <div id="pixel-perfect-graphics" class="feature">
+                        Pixel-Perfect Graphics
+                        <div id="pixel-perfect-graphics-description"
+                            class="feature-description">
+                            Immerse yourself in charming retro-style pixel
+                            art that brings the chaotic streets to life.
+                        </div>
+                    </div>
+
+                    <div id="dynamic-gameplay" class="feature">
+                        Dynamic Gameplay
+                        <div id="dynamic-gameplay-description"
+                            class="feature-description">
+                            The further you run, the faster it gets! Stay
+                            sharp as new challenges appear to test your
+                            skills.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="character-gallery">
+            <h2 id="characters-title">Our Characters</h2>
+            <div class="character">
+                <img src="images/kido.png" alt="Character 1">
+                <p id="character-kiddo" class="character-description">Kiddo -
+                    the fastest kid on the
+                    block! Dodging cars, jumping over potholes, and outrunning
+                    chaos, all while trying to make it to school on time.</p>
+            </div>
+
+            <div class="character">
+                <img src="images/cat.png" alt="Character 2">
+                <p id="character-nopsu" class="character-description">Nopsu –
+                    the fastest cat in
+                    town, so quick you’ll barely see him coming! He’s the master
+                    of stealth, slipping through the shadows and vanishing in
+                    the blink of an eye. Whether it’s swiping treats or darting
+                    around corners, Nopsu is always a step ahead.</p>
+            </div>
+
+            <div class="character">
+                <img src="images/grandma.png" alt="Character 3">
+                <p id="character-grandma"
+                    class="character-description">Mummimamma - she might look
+                    like she’s taking a nap, but don’t be fooled! When our hero
+                    tries to race through, Granny’s and her walking stick always
+                    in the way. Getting past Granny is no easy task, but watch
+                    out – she’s quicker than she looks!</p>
+            </div>
+        </section>
+
+        <script>
+            function setLanguage(lang) {
+                const enText = {
+                    "intro-text": "Nostalgy School Run by Lizzard Productions",
+                    "download-button": "Download Game",
+                    "first-part": "Hey there!",
+                    "second-part-1": "Your parents want you to know the traffic rules — but you couldn’t care less about learning them and just want to play with your friends? Then we’ve got the perfect option for you! You and your parents are both going to love it!",
+                    "second-part-2": "Nostalgy School Run is the game where kids can play freely while learning about traffic and safety equipment at the same time. This way, both parents and children are happy — and the roads become safer, too.",
+                    "second-part-3": "On this website, you’ll get to explore our game, meet its characters, get to know the developers behind it, and even learn about our partner. Stay tuned and don’t forget to check out our latest updates in the News section!",
+                    "game-features-title": "Game Features:",
+                    "endless-challenges": "Endless Challenges",
+                    "endless-challenges-description": "Dodge speeding cars, avoid reckless cyclists, and navigate unpredictable pedestrians as you race through an ever-changing environment based on real-life traffic scenarios from Tampere.",
+                    "learn-traffic-rules": "Learn Traffic Rules",
+                    "learn-traffic-rules-description": "Every obstacle is a lesson! From crossing at zebra crossings to obeying traffic lights, players will pick up essential traffic safety rules while having fun.",
+                    "pixel-perfect-graphics": "Pixel-Perfect Graphics",
+                    "pixel-perfect-graphics-description": "Immerse yourself in charming retro-style pixel art that brings the chaotic streets to life.",
+                    "dynamic-gameplay": "Dynamic Gameplay",
+                    "dynamic-gameplay-description": "The further you run, the faster it gets! Stay sharp as new challenges appear to test your skills.",
+                    "characters-title": "Our Characters",
+                    "character-kiddo": "Kiddo - the fastest kid on the block! Dodging cars, jumping over potholes, and outrunning chaos, all while trying to make it to school on time.",
+                    "character-nopsu": "Nopsu – the fastest cat in town, so quick you’ll barely see him coming! He’s the master of stealth, slipping through the shadows and vanishing in the blink of an eye. Whether it’s swiping treats or darting around corners, Nopsu is always a step ahead.",
+                    "character-grandma": "Mummimamma - she might look like she’s taking a nap, but don’t be fooled! When our hero tries to race through, Granny’s and her walking stick is always in the way. Getting past Granny is no easy task, but watch out – she’s quicker than she looks!",
+                    "home-link": "Home",
+                    "news-link": "News",
+                    "contact-link": "Contact",
+                    "about-link": "About Us",
+                    "yhta-link": "YHTÄ-Project"
+                };
+    
+                const fiText = {
+                    "intro-text": "Nostalgy School Run Lizzard Productionilta",
+                    "download-button": "Lataa Peli",
+                    "first-part": "Heippa!",
+                    "second-part-1": "Vanhempasi haluavat sinun tietävän liikennesäännöt — mutta et välitä niiden opettelusta ja haluat vain pelata kavereidesi kanssa? Meillä on täydellinen vaihtoehto sinulle! Sekä sinä että vanhempasi tulette rakastamaan sitä!",
+                    "second-part-2": "Nostalgy School Run on peli, jossa lapset voivat pelata vapaasti samalla oppien liikennesääntöjä ja turvallisuusvarusteita. Näin sekä vanhemmat että lapset ovat onnellisia — ja tiet turvallisempia.",
+                    "second-part-3": "Tällä sivustolla voit tutustua peliimme, tavata sen hahmot, tutustua sen kehittäjiin ja jopa oppia kumppaneistamme. Pysy kuulolla ja älä unohda tarkistaa uutisosioistamme uusimpia päivityksiä!",
+                    "game-features-title": "Pelin Ominaisuudet:",
+                    "endless-challenges": "Loputtomat Haasteet",
+                    "endless-challenges-description": "Vältä nopeita autoja, vältä holtittomia pyöräilijöitä ja navigoi arvaamattomien jalankulkijoiden ohi, kun kilpailet muuttuvassa ympäristössä, joka pohjautuu oikean elämän liikennetilanteisiin Tampereella.",
+                    "learn-traffic-rules": "Opettele Liikennesäännöt",
+                    "learn-traffic-rules-description": "Jokainen este on oppitunti! Opit tärkeitä liikenneturvallisuussääntöjä samalla, kun pelaat hauskaa peliä.",
+                    "pixel-perfect-graphics": "Täydelliset Pikseligrafiikat",
+                    "pixel-perfect-graphics-description": "Uppoudu viehättävään retrotyyliin, joka tuo kaaottiset kadut eloon.",
+                    "dynamic-gameplay": "Dynaaminen Pelattavuus",
+                    "dynamic-gameplay-description": "Mitä pidemmälle juokset, sitä nopeammin se menee! Pysy tarkkana, sillä uusia haasteita ilmestyy testaamaan taitojasi.",
+                    "characters-title": "Hahmomme",
+                    "character-kiddo": "Kiddo - nopein lapsi kaupungissa! Väistää autoja, hyppää kuoppien yli ja juoksee kaaoksen ohi, kaikki samalla kun yrittää päästä kouluun ajoissa.",
+                    "character-nopsu": "Nopsu – nopein kissa kaupungissa, niin nopea, että et ehdi nähdä häntä! Hän on salaisuuksien mestari, liukuen varjoissa ja katoaa silmänräpäyksessä. Olipa kyseessä herkkupalan varastaminen tai kulman ympäri juokseminen, Nopsu on aina askeleen edellä.",
+                    "character-grandma": "Mummimamma - hän saattaa näyttää siltä, että hän ottaa torkut, mutta älä anna sen huijata itseäsi! Kun sankarimme yrittää juosta, mummo ja hänen kävelykeppinsä ovat aina tiellä. Päästäkseen mummista ohi, ei ole helppoa, mutta varo – hän on nopeampi kuin miltä näyttää!",
+                    "home-link": "Etusivu",
+                    "news-link": "Uutiset",
+                    "contact-link": "Yhteystiedot",
+                    "about-link": "Meistä",
+                    "yhta-link": "YHTÄ-Hanke"
+                };
+    
+                const text = lang === 'fi' ? fiText : enText;
+    
+                // Päivitä kaikki elementit kielikohtaisilla teksteillä
+                for (const key in text) {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = text[key];
+                    }
+                }
+    
+                // Toggle language selector active state
+                const languages = document.querySelectorAll('.language-selector img');
+                languages.forEach(langImg => langImg.classList.remove('active-language'));
+                document.querySelector(`.language-selector img[alt="${lang}"]`).classList.add('active-language');
+            }
+        </script>
+    </body>
+
+</html>

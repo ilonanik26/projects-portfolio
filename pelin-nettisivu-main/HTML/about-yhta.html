@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>About - Nostlgy School Run</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+        <style>
+        body {
+            background-image: linear-gradient(rgba(52, 251, 122, 0.5), rgba(70, 232, 208, 0.5)); /* Taustaan lisätään liukuväri vihreästä siniseen läpinäkyvillä sävyillä */
+            background-repeat: no-repeat; /* Taustaväri ei toistu */
+            min-height: 100vh; /* Sivun korkeus vähintään koko näytön korkuinen */
+            text-align: center;   /* Teksti oletuksena keskitetty */
+            font-family: 'Press Start 2P'; /* Retromainen fontti, muistuttaa videopelien fontteja */
+            font-size: 20px;  /* Lopullinen fonttikoko määritelty tähän */
+            margin:0; /* Poistaa oletusmarginaalit sivulta */
+            
+        }
+        ul {
+            background-color: rgb(22, 145, 22); /* Yläpalkin taustaväri vihreäksi */
+            list-style-type: none; /* Poistetaan listapallurat */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Estetään sisällön pursuaminen ulos, esim. kelluvien elementtien takia */
+        }
+        li {
+            float: left; /* Navigaatiolinkit vierekkäin vaakarivissä */
+    
+        }
+        a {
+            display: block;
+            padding: 14px 16px;
+             /* Tekstillä on klikkausalue (linkin sisäinen tila) */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+             /* Valkoinen väri, keskitys, ei alleviivausta */
+        }
+
+        .navbar {
+                display: flex; 
+                align-items: center;
+                justify-content: space-between;
+                 /* Asettaa sisällöt (esim. logo vasemmalle, linkit oikealle) */
+                padding: 10px 20px;
+                background-color: rgb(22, 145,22);
+                        /* Sama vihreä väri kuin yläpalkissa */
+            }
+
+        .logo img {
+                width:100px;
+                border-radius: 50px;
+                /* Pyöristää kuvan reunat (lähes ympyrä) */
+
+                float: left;
+                margin-right: 10px;
+                /* Väli kuvan ja tekstin väliin */
+        }
+
+        li a:hover {
+            background-color: #111;
+            /* Kun viet hiiren linkin päälle, tausta vaihtuu tummemmaksi */
+        }
+        .active {
+            background-color: darkgreen;
+             /* Korostaa aktiivisen linkin erottumaan muista */
+        }
+
+        .language-selector img {
+                width:30px;
+                margin-left: 10px;
+                cursor: pointer;
+                 /* Liput ovat 30px leveitä, vasempaan väliä ja hiiren osoitin muuttuu osoittavaksi */
+            }
+            .active-language {
+                border: 2px solid darkgreen;
+                /* Aktiiviselle kielelle vihreä reunaviiva */
+            }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="logo" id="logo-link">
+                <img src="images/logowobg.png" alt="logo">
+            </a>
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="news.html" id="news-link">News</a></li>
+                <li><a href="contact.html" id="contact-link">Contact</a></li>
+                <li><a href="about-team.html" id="about-link">About Us</a></li>
+                <li><a class="active" href="about-yhta.html"
+                        id="yhta-link">YHTÄ-project</a></li>
+            </ul>
+            <div class="language-selector">
+                <img src="images/finnish .png" alt="Finnish"
+                    onclick="setLanguage('fi')">
+                <img src="images/English.png" alt="English"
+                    onclick="setLanguage('en')" class="active-language">
+            </div>
+        </nav>
+
+        <h1 id="yhta-heading">About YHTÄ-Project</h1>
+
+        <section
+            style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+            <p id="yhta-description">The goal of the YHTÄ project is to create a
+                playbook that allows software developers to build services
+                utilizing data produced by the City of Tampere’s ecosystem. The
+                YHTÄ playbook will provide practical technical documentation to
+                help developers access and analyze this data. It will also
+                include real-world examples, particularly related to data
+                concerning pedestrian safety in the city and insights gained
+                from its analysis. The playbook will be tested through two
+                scenarios focusing on “safe city for pedestrians,” with special
+                consideration given to people with mobility limitations. Based
+                on the testing outcomes, a functional version of the YHTÄ
+                playbook will be developed.</p>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="images/Yhtä logo.jpg" alt="YHTÄ Logo"
+                style="max-width: 100%; height: auto; border-radius: 12px;">
+        </div>
+
+        <p id="project-method">The project will establish a robust and tested
+            method for implementing a cross-cutting data analysis pipeline in
+            the urban community context. The playbook will include clear
+            instructions and technical guidelines on how to access, manage, and
+            use data from the city’s ecosystem. The focus will also be on data
+            management, advanced processing, and AI techniques, considering the
+            perspectives of individual city residents, solution providers, and
+            city authorities.</p>
+
+        <p id="public-access">The YHTÄ playbook will be publicly available
+            online, enabling anyone to use the guidelines and examples to
+            develop new AI applications that enhance urban living for citizens.
+            The project is funded by the European Regional Development Fund
+            (ERDF) for 2021-2027.</p>
+
+        <p id="learn-more">Learn more:</p>
+
+        <a href="https://projects.tuni.fi/yhta/" style="color: darkgreen;"
+            target="_blank" id="learn-more-link">Click here to learn more about
+            YHTÄ-Project!</a>
+        <a
+            href="https://projects.tuni.fi/uploads/2025/04/33011b5c-playbook_draft.pdf"
+            style="color:darkgreen" target="_blank"
+            id="playbook-link">Playbook!</a>
+
+        <script>
+            function setLanguage(lang) {
+            const enText = {
+                "yhta-heading": "About YHTÄ-Project",
+                "yhta-description": "The goal of the YHTÄ project is to create a playbook that allows software developers to build services utilizing data produced by the City of Tampere’s ecosystem. The YHTÄ playbook will provide practical technical documentation to help developers access and analyze this data. It will also include real-world examples, particularly related to data concerning pedestrian safety in the city and insights gained from its analysis. The playbook will be tested through two scenarios focusing on “safe city for pedestrians,” with special consideration given to people with mobility limitations. Based on the testing outcomes, a functional version of the YHTÄ playbook will be developed.",
+                "project-method": "The project will establish a robust and tested method for implementing a cross-cutting data analysis pipeline in the urban community context. The playbook will include clear instructions and technical guidelines on how to access, manage, and use data from the city’s ecosystem. The focus will also be on data management, advanced processing, and AI techniques, considering the perspectives of individual city residents, solution providers, and city authorities.",
+                "public-access": "The YHTÄ playbook will be publicly available online, enabling anyone to use the guidelines and examples to develop new AI applications that enhance urban living for citizens. The project is funded by the European Regional Development Fund (ERDF) for 2021-2027.",
+                "learn-more": "Learn more:",
+                "learn-more-link": "Click here to learn more about YHTÄ-Project!",
+                "playbook-link": "Playbook!",
+                "home-link": "Home",
+                "news-link": "News",
+                "contact-link": "Contact",
+                "about-link": "About Us",
+                "yhta-link": "YHTÄ-project"
+            };
+
+            const fiText = {
+                "yhta-heading": "Tietoa YHTÄ-Projektista",
+                "yhta-description": "YHTÄ-projektin tavoitteena on luoda pelikirja, joka mahdollistaa ohjelmistokehittäjille palveluiden rakentamisen Tampereen kaupungin ekosysteemistä tuotetun datan hyödyntämisen. YHTÄ-pelikirja tarjoaa käytännön teknistä dokumentaatiota, joka auttaa kehittäjiä pääsemään käsiksi tähän dataan ja analysoimaan sitä. Pelikirja sisältää myös todellisia esimerkkejä, erityisesti kaupunkialueen jalankulkijoiden turvallisuuteen liittyvästä datasta ja siitä saaduista havainnoista. Pelikirjaa testataan kahdessa skenaariossa, joissa keskitytään 'turvalliseen kaupunkiin jalankulkijoille', erityisesti liikuntarajoitteisille henkilöille. Testitulosten perusteella kehitetään toimiva versio YHTÄ-pelikirjasta.",
+                "project-method": "Projekti luo vankan ja testatun menetelmän, jolla toteutetaan poikkileikkaava datanalyysiputki kaupunkiyhteisön kontekstissa. Pelikirja sisältää selkeät ohjeet ja tekniset suuntaviivat siitä, kuinka pääsyä, hallintaa ja käyttöä kaupungin ekosysteemin dataan voidaan hallita. Erityistä huomiota kiinnitetään myös datan hallintaan, edistyneeseen prosessointiin ja tekoälytekniikoihin, ottaen huomioon yksittäisten kaupunkilaisten, ratkaisujen tarjoajien ja kaupungin viranomaisten näkökulmat.",
+                "public-access": "YHTÄ-pelikirja on julkisesti saatavilla verkossa, jolloin kuka tahansa voi käyttää ohjeita ja esimerkkejä kehittääkseen uusia tekoälyratkaisuja, jotka parantavat kaupunkielämää kansalaisille. Projekti on saanut rahoitusta Euroopan aluekehitysrahastolta (EAKR) vuosille 2021-2027.",
+                "learn-more": "Lisätietoja:",
+                "learn-more-link": "Klikkaa tästä saadaksesi lisää tietoa YHTÄ-projektista!",
+                "playbook-link": "Playbook!",
+                "home-link": "Etusivu",
+                "news-link": "Uutiset",
+                "contact-link": "Yhteystiedot",
+                "about-link": "Meistä",
+                "yhta-link": "YHTÄ-Hanke"
+            };
+
+            const text = lang === 'fi' ? fiText : enText;
+
+            // Update all text content based on the selected language
+            for (const key in text) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = text[key];
+                }
+            }
+
+            // Toggle language selector active state
+            const languages = document.querySelectorAll('.language-selector img');
+            languages.forEach(langImg => langImg.classList.remove('active-language'));
+            document.querySelector(`.language-selector img[alt="${lang}"]`).classList.add('active-language');
+        }
+    </script>
+
+    </body>
+</html>

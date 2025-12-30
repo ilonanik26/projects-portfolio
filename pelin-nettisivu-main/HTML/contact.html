@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Contact - Nostlgy School Run</title>
+        <style>
+            /* YLEISET SIVUN ASETUKSET */
+        body {
+            background-image: linear-gradient(rgba(52, 251, 122, 0.5), rgba(70, 232, 208, 0.5)); /* Taustaväriksi tulee liukuvärjäys vihreästä siniseen, molemmat värit läpikuultavia */
+
+            background-repeat: no-repeat; /* Taustakuvaa ei toisteta */
+
+            min-height: 100vh;  /* Sivun vähimmäiskorkeus on koko näytön korkeus */
+
+            text-align: center; /* Kaikki teksti oletuksena keskitetään */
+            font-family: 'Press Start 2P'; /* Käytetään retro-tyylistä pikselifonttia */
+            font-size: 20px; /* Määritellään lopullinen fonttikoko */
+            margin:0;   /* Poistetaan oletusmarginaalit selaimelta */
+        }
+        /*Ylänavigaatio*/
+        ul {
+            background-color: rgb(22, 145, 22); /* Vihreä taustaväri yläpalkille */
+            list-style-type: none;  /* Poistaa listamerkit (pallot) */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;  /* Estää sisältöä pursuamasta ulos */
+        }
+        li {
+            float: left; /* Navigaatiolinkit näkyvät vierekkäin (vaaka) */
+        }
+        a {
+            display: block;
+            padding: 14px 16px;
+            /* Lisää tilaa linkkitekstin ympärille */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            /* Poistaa linkkien alleviivauksen ja keskittää ne */
+        }
+
+        .navbar {
+                display: flex; 
+                align-items: center;
+                justify-content: space-between;
+                 /* Flexbox asettaa logon vasemmalle ja linkit oikealle */
+                padding: 10px 20px;
+                background-color: rgb(22, 145,22);
+                /* Sama vihreä taustaväri */
+        }
+
+        .logo img {
+                width:100px;
+                border-radius: 50px;
+                 /* Tekee kuvasta pyöreän reunoista */
+                float: left;
+                margin-right: 10px;
+                /* Lisää väliä logon ja muun sisällön väliin */
+        }
+
+        li a:hover {
+            background-color: #111; /* Tummempi väri, kun viet hiiren linkin päälle */
+        }
+        .active {
+            background-color: darkgreen;
+             /* Korostaa aktiivista (valittua) valikkokohtaa */
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            /* Flexbox asetuksilla jäsenet menevät riviin, ja uusi rivi alkaa tarvittaessa */
+        }
+        .team-member{
+            width: 180px;
+            text-align:center;
+            /* Yhden jäsenen laatikon koko ja keskitys */
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+             /* Kuvan sisältö rajautuu eikä veny väärin */
+            border-radius: 50%; /* Täysin pyöreä kuva */
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            /* Pehmeä varjo ja valkoinen reuna kuvassa */
+            transition: transform 0.3s; /* Lisää pehmeän animaation esim. hover-efekteihin */
+        }
+
+        .name{
+            margin-top: 10px;
+            font-weight: bold;
+             /* Jäsenen nimi korostettuna */
+        }
+        .role{
+            margin-top: 5px;
+            font-size: 0.8em;
+            color: #333;
+             /* Rooli pienemmällä fontilla ja tummanharmaana */
+        }
+
+        .contact-info{
+            margin-top: 40px;
+            background-color: rgba(255,255,255,0.6);
+             /* Läpikuultava valkoinen laatikko */
+            padding:20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Keskittää laatikon */
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            /* Pehmeä varjo laatikon taakse */
+        }
+
+        .contact-form{
+            max-width: 500px;
+            margin:0 auto;
+            text-align: left;
+            background: rgba(255,255,255,0.2);
+             /* Vaalean läpinäkyvä tausta */
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 14px;
+             /* Pyöristetyt reunat ja pieni fontti */
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            /* Tekstikenttien koko ja väli */
+
+            font-family: 'Press Start 2P';
+            border: 2px solid #444;
+            border-radius: 10px;
+            background:#f8f8f8;
+             /* Vaalea tausta ja tummat reunat */
+
+        }
+
+        .contact-form button {
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-family: 'Press Start 2P';
+            cursor: pointer;
+            border-radius: 10px;
+            /* Napin tyyli: vihreä tausta, pyöristetyt reunat */
+        }
+
+        .contact-form button:hover {
+            background-color: #0b3d0b;
+             /* Tummempi vihreä hover-väri */
+        }
+        .contact-info i {
+            margin-right: 12px;
+            color: darkgreen;
+            font-size: 20px;
+             /* Kuvakkeet esim. osoite tai sähköposti */
+        }
+
+        .contact-link {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            margin: 12px 0;
+            transition: color 0.3s ease;
+             /* Linkit ilman alleviivausta, ja animaatio hoverille */
+        }
+        .contact-link:hover {
+            color: darkgreen;
+            text-decoration: underline;
+            /* Hover-efekti linkeille */
+        }
+        .language-selector img {
+                width:30px;
+                margin-left: 10px;
+                cursor: pointer;
+                /* Lipun koko, väli ja klikattavuus */
+            }
+            .active-language {
+                border: 2px solid darkgreen;
+                /* Korostus valitulle kielelle */
+            }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="logo" id="logo">
+                <img src="images/logowobg.png" alt="logo">
+            </a>
+
+            <ul>
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="news.html" id="news-link">News</a></li>
+                <li><a class="active" href="contact.html"
+                        id="contact-link">Contact</a></li>
+                <li><a href="about-team.html" id="about-link">About Us</a></li>
+                <li><a href="about-yhta.html"
+                        id="yhta-link">YHTÄ-project</a></li>
+            </ul>
+            <div class="language-selector">
+                <img src="images/finnish .png" alt="Finnish"
+                    onclick="setLanguage('fi')" class="active-language">
+                <img src="images/English.png" alt="English"
+                    onclick="setLanguage('en')">
+            </div>
+        </nav>
+        <h1 id="contact-heading">Contact Us</h1>
+
+        <div class="team-container" id="team-container">
+            <div class="team-member">
+                <img src="images/Sardor.JPG" alt="Sardor Mukhudinov">
+                <div class="name" id="sardor-name">Sardorbek Mukhudinov</div>
+                <div class="role" id="sardor-role">CEO</div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/Annika .JPG" alt="Annika">
+                <div class="name" id="annika-name">Annika Mykkänen</div>
+                <div class="role" id="annika-role">Graphics</div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/Ilona.jpg" alt="Ilona">
+                <div class="name" id="ilona-name">Ilona Nikulina</div>
+                <div class="role" id="ilona-role">Web-page Developer</div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/Jaakko.JPG" alt="Jaakko">
+                <div class="name" id="jaakko-name">Jaakko Karti</div>
+                <div class="role" id="jaakko-role">Music & Trailer</div>
+            </div>
+        </div>
+
+        <div class="contact-info" id="contact-info">
+            <p id="contact-info-text">If you have any questions, feel free to
+                reach out:</p>
+            <p>
+                <a href="mailto:lizzardproductions.game@.com"
+                    class="contact-link" id="email-link">
+                    <i class="fas fa-envelope"></i>
+                    lizzardproductions.game@gmail.com
+                </a>
+            </p>
+            <p>
+                <a href="https://www.instagram.com/lizzardproductions"
+                    target="_blank" class="contact-link" id="instagram-link">
+                    <i class="fab fa-instagram"></i> @lizzardproductions
+                </a>
+            </p>
+        </div>
+
+        <h2 id="form-heading" style="margin-top: 80px;">Send us a message!</h2>
+        <form action="https://formspree.io/f/mzzeykbq" method="POST"
+            class="contact-form">
+            <label for="name" id="name-label">Name*</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email" id="email-label">Email*</label><br>
+            <input type="email" id="email" name="_replyto" required><br>
+
+            <label for="message" id="message-label">Message*</label><br>
+            <textarea id="message" name="message" rows="5"
+                required></textarea><br>
+
+            <button type="submit" id="submit-button">Send</button>
+        </form>
+
+        <div id="thankyou" style="display: none; color:green; margin-top:20px;">
+            ✅ Your message has been sent successfully!
+        </div>
+
+        <script>
+                document.querySelector('.contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Estää oletuslähetyksen
+            
+                    const form = this;
+            
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            form.reset(); // Tyhjentää kentät
+                            form.style.display = 'none'; // Piilottaa lomakkeen
+                            document.getElementById('thankyou').style.display = 'block'; // Näyttää viestin
+                        } else {
+                            alert('Oops! Something went wrong. Please try again.');
+                        }
+                    }).catch(error => {
+                        alert('Error sending message. Please check your internet connection.');
+                    });
+                });
+            </script>
+
+        <script>
+    function setLanguage(lang) {
+        const enText = {
+            "contact-heading": "Contact Us",
+            "sardor-name": "Sardorbek Mukhudinov",
+            "sardor-role": "CEO",
+            "annika-name": "Annika Mykkänen",
+            "annika-role": "Graphics",
+            "ilona-name": "Ilona Nikulina",
+            "ilona-role": "Web-page Developer",
+            "jaakko-name": "Jaakko Karti",
+            "jaakko-role": "Music & Trailer",
+            "contact-text": "If you have any questions, feel free to reach out:",
+            "email-link": "lizzardproductions.game@gmail.com",
+            "instagram-link": "@lizzardproductions",
+            "form-heading": "Send us a message!",
+            "name-label": "Name*",
+            "email-label": "Email*",
+            "message-label": "Message*",
+            "submit-btn": "Send",
+            "home-link": "Etusivu",
+               "home-link": "Home",
+                        "news-link": "News",
+                        "contact-link": "Contact",
+                         "about-link": "About Us",
+                         "yhta-link": "YHTÄ-project"
+        };
+
+        const fiText = {
+            "contact-heading": "Ota Yhteyttä",
+            "sardor-name": "Sardorbek Mukhudinov",
+            "sardor-role": "Tiimijohtaja",
+            "annika-name": "Annika Mykkänen",
+            "annika-role": "Grafiikka",
+            "ilona-name": "Ilona Nikulina",
+            "ilona-role": "Verkkosivujen Kehittäjä",
+            "jaakko-name": "Jaakko Karti",
+            "jaakko-role": "Musiikki & Traileri",
+            "contact-text": "Jos sinulla on kysyttävää, ota yhteyttä:",
+            "email-link": "lizzardproductions.game@gmail.com",
+            "instagram-link": "@lizzardproductions",
+            "form-heading": "Lähetä meille viesti!",
+            "name-label": "Nimi*",
+            "email-label": "Sähköposti*",
+            "message-label": "Viesti*",
+            "submit-btn": "Lähetä",
+            "home-link": "Etusivu",
+                "news-link": "Uutiset",
+                "contact-link": "Yhteystiedot",
+                "about-link": "Meistä",
+                "yhta-link": "YHTÄ-Hanke"
+        };
+
+        const text = lang === 'fi' ? fiText : enText;
+
+        // Update all text content based on the selected language
+        for (const key in text) {
+            const element = document.getElementById(key);
+            if (element) {
+                element.textContent = text[key];
+            }
+        }
+
+        // Toggle language selector active state
+        const languages = document.querySelectorAll('.language-selector img');
+        languages.forEach(langImg => langImg.classList.remove('active-language'));
+        document.querySelector(`.language-selector img[alt="${lang}"]`).classList.add('active-language');
+    }
+</script>
+    </body>
+</html>
