@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+      rel="stylesheet" />
+    <title>Poshlaya Molly</title>
+    <style>
+    /* 1. Perustyylit */
+    body {
+      background-color: #DC2D2D;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      font-family: 'Rubik Dirt', cursive;
+      font-size: 64px;
+      color: black;
+      text-align: center;
+      margin-top: 60px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    /* 2. Navigaatio */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #333;
+    }
+
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 3. Albumikuva */
+    .album-girl {
+      margin: 40px auto 20px;
+      text-align: center;
+    }
+
+    .album-girl img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease;
+    }
+
+    .album-girl img:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-style: italic;
+      color: black;
+      font-size: 18px;
+    }
+
+    /* 4. Sisältö */
+    .content {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
+
+    .band-info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .block {
+      background: linear-gradient(145deg, #e94b4b, #bb1c1c);
+      padding: 25px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      color: black;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .block p {
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .highlight {
+      color: black;
+      font-weight: bold;
+    }
+
+    .quote {
+      font-style: italic;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #fff;
+      padding: 10px 20px;
+      margin: 20px 0;
+      color: black;
+    }
+
+    /* 5. Fade-in animaatio */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 6. Desktop-näyttö */
+    @media screen and (min-width: 768px) {
+      .navbar {
+        left: 0;
+      }
+
+      .logo {
+        left: 10px;
+      }
+
+      .content {
+        padding-left: 270px;
+      }
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <!-- NAVIGATION MENU -->
+    <nav id="navbar" class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="bandmembers.html">Band members</a>
+      <a href="community.html">Community</a>
+    </nav>
+
+    <!-- LOGO / MENU BUTTON -->
+    <img src="images/redrat.jpg" alt="Menu" class="logo"
+      onclick="toggleNav()" />
+
+    <h1 class="title">Poshlaya Molly</h1>
+
+    <!-- KUVA -->
+    <section class="album-girl fade-in">
+      <img src="images/devochka.png" alt="Poshlaya Molly Album Girl" />
+    </section>
+
+    <!-- BÄNDIN TIEDOT -->
+    <main class="content">
+      <div class="band-info-container">
+
+        <section class="block fade-in" id="formation">
+          <p><span class="highlight">Poshlaya Molly</span> was officially
+            founded in 2016, but the band's roots go back to 2014, when friends
+            <span class="highlight">Kirill Bledny</span> and <span
+              class="highlight">Bogdan Stupka</span> started making music
+            together.</p>
+          <p class="quote">“At first, only friends came to the shows — then
+            suddenly, over 400 fans filled the room.”</p>
+        </section>
+
+        <section class="block fade-in" id="debut-album">
+          <p>Their debut album, <span
+              class="highlight">"8 способов как бросить дрочить"</span> (8 Ways
+            to Stop Masturbating), released in 2017, quickly gained traction,
+            especially through VKontakte and social media.</p>
+          <p class="quote">“The album ranked #2 in The Flow's best Russian
+            albums of 2017.”</p>
+        </section>
+
+        <section class="block fade-in" id="ep-release">
+          <p>In 2018, they released the EP <span
+              class="highlight">"Sad girl with eyes like a dog"</span>,
+            showcasing a more emotional and experimental sound.</p>
+          <p class="quote">“The EP made it to #12 on The Flow's best Russian
+            albums of 2018.”</p>
+        </section>
+
+        <section class="block fade-in" id="paycheck-ep">
+          <p>In 2020, the band released the <span
+              class="highlight">"Paycheck"</span> EP, including a surprise
+            collaboration with former SEREBRO member <span
+              class="highlight">Katya Kischuk</span>.</p>
+          <p class="quote">“Tracks like ‘Мишка’ blended pop-punk with electronic
+            influences — a new direction.”</p>
+        </section>
+
+        <section class="block fade-in" id="recent-activity">
+          <p>After a 2-year break, Poshlaya Molly returned in 2024 with the EP
+            <span class="highlight">"RATT#WHORE"</span>, a bold comeback with
+            mature themes and evolved sound.</p>
+          <p class="quote">“The band's style is rawer, darker — but still very
+            much Poshlaya Molly.”</p>
+        </section>
+
+        <footer
+          style="text-align: center; padding: 20px; color: white; font-size: 14px;">
+          &copy; 2025 Poshlaya Molly
+        </footer>
+
+      </div>
+
+    </main>
+
+    <!-- SCRIPTIT -->
+    <script>
+    function toggleNav() {
+      const nav = document.getElementById("navbar");
+      nav.style.left = nav.style.left === "0px" ? "-250px" : "0px";
+    }
+
+    const faders = document.querySelectorAll('.fade-in');
+
+    function showOnScroll() {
+      const triggerBottom = window.innerHeight * 0.9;
+
+      faders.forEach(fader => {
+        const boxTop = fader.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          fader.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+  </body>
+</html>

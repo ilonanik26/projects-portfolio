@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+            rel="stylesheet">
+        <title>Poshlaya Molly - Community</title>
+        <style>
+    /* Koko sivun tausta ja fontti */
+    body {
+      background-color: #DC2D2D;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .title {
+      font-family: 'Rubik Dirt', cursive;
+      font-size: 64px;
+      color:black;
+      text-align: center;
+      margin-top: 60px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+    .navbar a {
+      display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .navbar a:hover {
+      background-color: #333;
+    }
+    /* LOGO-nappi */
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .community-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .community-section h2 {
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+    .personal-story p {
+      font-size: 20px;
+      color: #fff;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .telegram-channel {
+      background: #111;
+      color: white;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .telegram-channel h3 {
+      font-size: 24px;
+      color: #e94b4b;
+    }
+    .telegram-channel a {
+      color: #e94b4b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .telegram-channel a:hover {
+      color: #fff;
+    }
+    .instagram-hashtags {
+      margin-top: 30px;
+      font-size: 20px;
+      color: white;
+    }
+    .instagram-hashtags a {
+      color: #e94b4b;
+      font-weight: bold;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+  </style>
+    </head>
+
+    <body>
+        <!-- NAVBAR -->
+        <nav id="navbar" class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="bandmembers.html">Band members</a>
+            <a href="community.html">Community</a>
+        </nav>
+
+        <!-- LOGO -->
+        <img src="images/redrat.jpg" alt="Menu" class="logo"
+            onclick="toggleNav()">
+
+        <!-- TITLE -->
+        <h1 class="title">Poshlaya Molly - Community</h1>
+
+        <!-- PERSONAL STORY SECTION -->
+        <section class="community-section personal-story">
+            <h2>My Poshlaya Molly Experience</h2>
+            <p>
+                I first started listening to Poshlaya Molly in 2017, and they
+                are still my favorite band to this day. What drew me to their
+                music was something unique – their style is unlike anything I
+                had heard before. Their songs span across various genres, and no
+                matter the mood, there's always a track that fits.
+            </p>
+            <p>
+                I absolutely love their music, not just for the sound but for
+                the raw emotion they convey. It's something I never knew I was
+                missing in my playlists. Over the years, I’ve even started
+                collecting their merch, and I can’t wait for their concert in
+                Finland. I’m sure it’s going to be an unforgettable experience!
+            </p>
+        </section>
+
+        <!-- TELEGRAM COMMUNITY SECTION -->
+        <section class="community-section telegram-community">
+            <h2>Join the Poshlaya Molly Fan Communities on Telegram!</h2>
+            <p>Poshlaya Molly's fans are incredibly active, constantly sharing
+                updates, news, and fan content on various Telegram channels.
+                Here are some of the ones I follow:</p>
+
+            <!-- Channel 1 -->
+            <div class="telegram-channel">
+                <h3><a href="https://t.me/poshlayamollyofficial"
+                        target="_blank">Poshlaya Molly Official Channel</a></h3>
+                <p>This is the official Telegram channel where you'll find all
+                    the latest news, updates, and exclusive content straight
+                    from the band!</p>
+            </div>
+
+            <!-- Channel 2 -->
+            <div class="telegram-channel">
+                <h3><a href="https://t.me/poshlayamollyextra"
+                        target="_blank">Poshlaya Molly Archives</a></h3>
+                <p><p>
+                        This is a channel where fans share rare archives of
+                        Poshlaya Molly's career – from old songs that were
+                        deleted or never released, to archive photos and videos
+                        that capture behind-the-scenes moments from the band's
+                        journey.
+                    </p>
+                </div>
+
+                <!-- Channel 3 -->
+                <div class="telegram-channel">
+                    <h3><a href="https://t.me/kiravenerora"
+                            target="_blank">Poshlaya Molly ex-member</a></h3>
+                    <p><p>
+                            This is a channel run by a girl who once
+                            collaborated with the band, sharing rare stories
+                            from that time. She posts exclusive archives,
+                            behind-the-scenes moments, and personal insights
+                            into her experience working with Poshlaya Molly.
+                        </p>
+                    </div>
+
+                </section>
+
+                <!-- INSTAGRAM HASHTAGS -->
+                <section class="instagram-hashtags">
+                    <p>Follow the band and share your love on Instagram using
+                        these
+                        hashtags:
+                        <a
+                            href="https://www.instagram.com/explore/tags/PoshlayaMolly/"
+                            target="_blank">#PoshlayaMolly</a>
+                    </p>
+                </section>
+
+                <footer
+                    style="text-align: center; padding: 20px; color: white; font-size: 14px;">
+                    &copy; 2025 Poshlaya Molly
+                </footer>
+
+                <script>
+    // Function to toggle the navbar on mobile
+    function toggleNav() {
+      const nav = document.getElementById("navbar");
+      nav.style.left = nav.style.left === "0px" ? "-250px" : "0px";
+    }
+  </script>
+
+            </body>
+        </html>

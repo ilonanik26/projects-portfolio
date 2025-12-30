@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Band Members - Poshlaya Molly</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap"
+            rel="stylesheet">
+        <style>
+    body {
+      background-color: #DC2D2D;
+      color: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      font-family: 'Rubik Dirt', cursive;
+      font-size: 64px;
+      color: black;
+      text-align: center;
+      margin-top: 60px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #333;
+    }
+
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .content {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
+
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .member-card {
+      background: linear-gradient(145deg, #e94b4b, #bb1c1c);
+      padding: 20px;
+      border-radius: 20px;
+      width: 260px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .member-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .member-card h3 {
+      margin: 10px 0 5px;
+      font-size: 22px;
+    }
+
+    .member-card p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .member-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: black;
+      text-decoration: underline;
+    }
+
+    @media screen and (min-width: 768px) {
+      .navbar {
+        left: 0;
+      }
+
+      .logo {
+        left: 10px;
+      }
+
+      .content {
+        padding-left: 270px;
+      }
+    }
+  </style>
+    </head>
+
+    <body>
+
+        <!-- NAVIGATION MENU -->
+        <nav id="navbar" class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="bandmembers.html">Band members</a>
+            <a href="community.html">Community</a>
+        </nav>
+
+        <!-- LOGO BUTTON -->
+        <img src="images/redrat.jpg" alt="Menu" class="logo"
+            onclick="toggleNav()">
+
+        <h1 class="title">Band Members</h1>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+            <section class="members">
+
+                <!-- MEMBER 1 -->
+                <div class="member-card">
+                    <img src="images/kirill.jpg" alt="Kirill Bledny">
+                    <h3>Kirill Bledny</h3>
+                    <p>Vocals, Founder</p>
+                    <a
+                        href="https://www.instagram.com/dropbled?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank">Instagram</a>
+                </div>
+
+                <!-- MEMBER 2 -->
+                <div class="member-card">
+                    <img src="images/pavel.png" alt="Pavel">
+                    <h3>Pavel Kholodyanskiy</h3>
+                    <p>Drums</p>
+                    <a
+                        href="https://www.instagram.com/paulkholodyansky?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank">Instagram</a>
+                </div>
+
+                <!-- MEMBER 3 -->
+                <div class="member-card">
+                    <img src="images/konstantin.jpeg" alt="Konstantin Pyzhov">
+                    <h3>Konstantin Pyzhov </h3>
+                    <p>Guitar</p>
+                    <a
+                        href="https://www.instagram.com/konstantin_pyzhov?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank">Instagram</a>
+                </div>
+
+                <div class="member-card">
+                    <img src="images/dmitriy.jpeg" alt="Dmitry Goncharenko">
+                    <h3>Dmitry Goncharenko </h3>
+                    <p> Bass Guitar</p>
+                    <a
+                        href="https://www.instagram.com/dima_goncharenko?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank">Instagram</a>
+                </div>
+
+            </section>
+
+            <footer
+                style="text-align: center; padding: 20px; color: white; font-size: 14px;">
+                &copy; 2025 Poshlaya Molly
+            </footer>
+
+        </main>
+
+        <!-- SCRIPT -->
+        <script>
+    function toggleNav() {
+      const nav = document.getElementById("navbar");
+      nav.style.left = nav.style.left === "0px" ? "-250px" : "0px";
+    }
+  </script>
+
+    </body>
+</html>
