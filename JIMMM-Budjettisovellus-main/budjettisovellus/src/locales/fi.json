@@ -1,0 +1,48 @@
+{
+    "app": {
+        "title": "Budjettisovellus"
+    },
+    "calendar": {
+        "title": "Tapahtumakalenteri"
+    },
+    "chart": {
+        "labels": {
+            "saved": "Säästöt",
+            "expense": "Menot",
+            "remainingGoal": "Budjettitavoitetta jäljellä",
+            "overGoal": "Tavoitteen ylimenevä"
+        }
+    },
+    "form": {
+        "title": "Lisää uusi tapahtuma",
+        "date": "Päivämäärä",
+        "type": "Tyyppi",
+        "expense": "Meno",
+        "income": "Tulo",
+        "description": "Kuvaus",
+        "placeholder": "Esim. ruokaostokset, kuukausipalkka",
+        "amount": "Summa (€)",
+        "submitExpense": "Lisää meno",
+        "submitIncome": "Lisää tulo",
+        "errorPositive": "Summan on oltava positiivinen luku!"
+    },
+    "goals": {
+        "toggle": "Aseta tavoitemenosi",
+        "namePlaceholder": "Menon nimi",
+        "valuePlaceholder": "Menon arvo",
+        "add": "Lisää tavoitemeno",
+        "remove": "Poista",
+        "total": "Yhteensä",
+        "error": "Virheellinen syöte."
+    },
+    "list": {
+        "title": "Kaikki tapahtumat",
+        "delete": "Poista",
+        "empty": "Ei tallennettuja tapahtumia.",
+        "confirmDelete": "Poistetaanko tapahtuma?"
+    },
+    "theme": {
+        "light": "☼",
+        "dark": "☽"
+    }
+}

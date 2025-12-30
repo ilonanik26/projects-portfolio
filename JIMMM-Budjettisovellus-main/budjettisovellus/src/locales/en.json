@@ -1,0 +1,48 @@
+{
+    "app": {
+        "title": "Budget App"
+    },
+    "calendar": {
+        "title": "Transaction Calendar"
+    },
+    "chart": {
+        "labels": {
+            "saved": "Savings",
+            "expense": "Expenses",
+            "remainingGoal": "Budget goal remaining",
+            "overGoal": "Over the goal"
+        }
+    },
+    "form": {
+        "title": "Add New Transaction",
+        "date": "Date",
+        "type": "Type",
+        "expense": "Expense",
+        "income": "Income",
+        "description": "Description",
+        "placeholder": "e.g. groceries, salary",
+        "amount": "Amount (€)",
+        "submitExpense": "Add Expense",
+        "submitIncome": "Add Income",
+        "errorPositive": "Amount must be positive!"
+    },
+    "goals": {
+        "toggle": "Set your goal expense",
+        "namePlaceholder": "Expense name",
+        "valuePlaceholder": "Expense value",
+        "add": "Add goal expense",
+        "remove": "Remove",
+        "total": "Total",
+        "error": "Invalid input."
+    },
+    "list": {
+        "title": "All Transactions",
+        "delete": "Delete",
+        "empty": "No saved transactions.",
+        "confirmDelete": "Delete this transaction?"
+    },
+    "theme": {
+        "light": "☼",
+        "dark": "☽"
+    }
+}
